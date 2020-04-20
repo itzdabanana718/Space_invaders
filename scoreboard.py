@@ -26,10 +26,10 @@ class Scoreboard():
 		
 	def prep_ships(self):
 		"""show how many ships are left"""
-		self.ships = Group
+		self.ships = Group()
 		for ship_number in range(self.stats.ships_left):
 			ship = Ship(self.ai_settings, self.screen)
-			ship.rect.x = 10 + ship_number * ship.rect.width
+			ship.rect.x = ship_number * ship.rect.width
 			ship.rect.y = 10
 			self.ships.add(ship)
 		
@@ -45,13 +45,20 @@ class Scoreboard():
 			self.ai_settings.bg_color)
 		self.score_rect = self.score_image.get_rect()
 		
+		#display the score in the top right
+		self.score_rect = self.score_image.get_rect()
+		self.score_rect.right = self.screen_rect.right - 5
+		self.score_rect.top = 1
+		
+		
 	def show_score(self):
 		"""draw score to the game"""
-		self.screen.blit(self.score_image, self.screen_rect)
+		self.screen.blit(self.score_image, self.score_rect)
 		self.screen.blit(self.high_score_image, self.high_score_rect)
 		
 		self.screen.blit(self.level_image, self.level_rect)
 		#draw ships
+		self.ships.draw(self.screen)
 		
 	def prep_high_score(self):
 		"""turn the highscore into an image"""

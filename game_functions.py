@@ -28,7 +28,7 @@ def check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, bullets):
 			#print("reached the bottom") 
 			break
 
-def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
+def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
 	"""responds to the ship being hit by an alien"""
 	if stats.ships_left > 0:
 		#decrement ships_left

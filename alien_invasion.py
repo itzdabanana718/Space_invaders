@@ -19,7 +19,7 @@ def run_game():
 	stats = GameStats(ai_settings)
 	sb = Scoreboard(ai_settings, screen, stats)
 	
-	#make the play button
+	#make the play button  
 	play_button = Button(ai_settings, screen, "Play")
 	
 	# make a ship
